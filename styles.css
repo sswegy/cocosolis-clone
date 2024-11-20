@@ -1,0 +1,376 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #FBF1EB;
+}
+
+body {
+    font-family: 'Gill Sans', sans-serif;
+}
+
+.header {
+    background: #FBF1EB;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    transition: height 0.8s ease-in-out;
+}
+
+.header-container.shrink {
+    height: 60px;
+}
+
+.logo img {
+    height: 70px;
+}
+
+.logo .shrink {
+    height: 50px;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 18px;
+    font-weight: 500;
+    transition: font-size 0.5s, color 0.5s;
+}
+
+.navigation ul li a:hover {
+    color: #ba8b72;
+    font-size: 20px;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-icons .icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.header-icons .icon img {
+    height: 20px;
+    width: 20px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ba8b72;
+    color: #FBF1EB;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+
+.profile-text {
+    font-size: 14px;
+    color: #555;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.profile-text:hover {
+    color: #ba8b72;
+}
+
+.secondary-header-container {
+    visibility: hidden;
+    background: #FBF1EB;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 81px;
+    z-index: 1000;
+}
+
+.secondary-header-container.show {
+    visibility: visible;
+}
+
+.secondary-header-container ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+.secondary-header-container ul li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 18px;
+    font-weight: 500;
+    transition: font-size 0.5s, color 0.5s;
+}
+
+.secondary-header-container ul li a:hover {
+    color: #ba8b72;
+    font-size: 20px;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: #ba8b72;
+    background-color: rgba(0, 0, 0, 0);
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0);
+    margin-bottom: 20px;
+}
+
+.hero-content button {
+    padding: 10px 20px;
+    background: #ba8b72;
+    color: #FBF1EB;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.hero-content button:hover {
+    background: #a37960;
+}
+
+.product-section-container {
+    padding: 40px 20px;
+    margin: 10px;
+}
+
+.product-section-container h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    background: #FBF1EB;
+    padding: 20px;
+    margin: 5px;
+    border-width: 10px;
+    border-color: #a37960;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    scale: 1;
+    transition: scale 0.5s, background 0.5s;
+}
+
+.product:hover {
+    scale: 1.05;
+    background-color: #fae4d6;
+}
+
+.product:hover h3, 
+.product:hover p,
+.product:hover .price,
+.product:hover .price span {
+    background-color: #fae4d6;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.product h3 {
+    color: #ba8b72;
+    margin-bottom: 10px;
+    transition: background 0.5s;
+}
+
+.product p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    transition: background 0.5s;
+}
+
+.product .price {
+    font-weight: bold;
+    color: #333;
+    transition: background 0.5s;
+}
+
+.product .price span {
+    text-decoration: line-through;
+    color: #999;
+    margin-left: 10px;
+    transition: background 0.5s;
+}
+
+.product button {
+    padding: 10px 20px;
+    background: #ba8b72;
+    color: #FBF1EB;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    transition: background 0.5s;
+}
+
+.product button:hover {
+    background: #a37960;
+}
+
+.footer {
+    background-color: #7f6b66;
+    color: #FBF1EB;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-top {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #a89085;
+    padding-bottom: 20px;
+}
+
+.payment-methods img {
+    margin: 0 5px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #a89085;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #FBF1EB;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-subscribe h3,
+.footer-follow h3 {
+    margin-bottom: 10px;
+}
+
+.footer-subscribe form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-subscribe input[type="email"] {
+    padding: 10px;
+    border: 1px solid #a89085;
+    border-radius: 5px;
+    font-size: 14px;
+    background: transparent;
+    color: #FBF1EB; 
+}
+
+.footer-subscribe label {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #FBF1EB;
+}
+
+.footer-subscribe button {
+    background-color: #a89085;
+    color: #FBF1EB;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.footer-subscribe button:hover {
+    background-color: #917a72;
+}
+
+.social-icons a img {
+    margin: 5px;
+    display: inline-block;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+}
+
+.footer * {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    margin: 0;
+}
+
